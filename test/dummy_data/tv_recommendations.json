@@ -1,0 +1,29 @@
+{
+  "page": 1,
+  "results": [
+    {
+      "adult": false,
+      "backdrop_path": "/backdrop_path.jpg",
+      "id": 39859,
+      "name": "Awkward.",
+      "original_language": "en",
+      "original_name": "Awkward.",
+      "overview": "An irreverent look at the conflict, chaos and humor that defines teenage life through the eyes of 15-year-old Jenna Hamilton whose life begins to change when a simple accident becomes an epic misunderstanding and is blown way out of proportion. Narration in the first-person voice of Jenna's blog posts captures the humor within the struggles and experiences everyone can relate to from their formative years.",
+      "poster_path": "/poster_path.jpg",
+      "media_type": "tv",
+      "genre_ids": [
+        35,
+        18
+      ],
+      "popularity": 209.067,
+      "first_air_date": "2011-07-19",
+      "vote_average": 7.459,
+      "vote_count": 374,
+      "origin_country": [
+        "US"
+      ]
+    }
+  ],
+  "total_pages": 2,
+  "total_results": 40
+}
