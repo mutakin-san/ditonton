@@ -1,3 +1,4 @@
+import 'package:ditonton/common/utils.dart';
 import 'package:ditonton/data/datasources/db/database_helper.dart';
 import 'package:ditonton/data/datasources/movie_local_data_source.dart';
 import 'package:ditonton/data/datasources/movie_remote_data_source.dart';
@@ -40,13 +41,16 @@ import 'package:ditonton/presentation/provider/tv_search_notifier.dart';
 import 'package:ditonton/presentation/provider/watchlist_movie_notifier.dart';
 import 'package:ditonton/presentation/provider/watchlist_tv_notifier.dart';
 import 'package:get_it/get_it.dart';
-import 'package:http/http.dart' as http;
 
 import 'data/datasources/tv_remote_data_source.dart';
 
 final locator = GetIt.instance;
 
-void init() {
+Future<void> init() async {
+  // external
+  final client = await getSSLPinningClient();
+  locator.registerSingletonAsync(() async => client);
+
   // bloc
   locator.registerFactory(
     () => SearchBloc(
@@ -179,6 +183,4 @@ void init() {
   // helper
   locator.registerLazySingleton<DatabaseHelper>(() => DatabaseHelper());
 
-  // external
-  locator.registerLazySingleton(() => http.Client());
 }
