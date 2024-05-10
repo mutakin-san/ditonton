@@ -27,6 +27,7 @@ import 'package:ditonton/domain/usecases/save_tv_watchlist.dart';
 import 'package:ditonton/domain/usecases/save_watchlist.dart';
 import 'package:ditonton/domain/usecases/search_movies.dart';
 import 'package:ditonton/domain/usecases/search_tv.dart';
+import 'package:ditonton/presentation/bloc/movie_list_bloc.dart';
 import 'package:ditonton/presentation/bloc/search_bloc.dart';
 import 'package:ditonton/presentation/provider/movie_detail_notifier.dart';
 import 'package:ditonton/presentation/provider/movie_list_notifier.dart';
@@ -54,6 +55,15 @@ Future<void> init() async {
   // bloc
   locator.registerFactory(
     () => SearchBloc(
+      locator(),
+    ),
+  );
+
+  // bloc
+  locator.registerFactory(
+    () => MovieListBloc(
+      locator(),
+      locator(),
       locator(),
     ),
   );
