@@ -1,6 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:ditonton/common/constants.dart';
 import 'package:ditonton/domain/entities/movie.dart';
+import 'package:ditonton/injection.dart';
 import 'package:ditonton/presentation/bloc/movie_list_bloc.dart';
 import 'package:ditonton/presentation/pages/movie_detail_page.dart';
 import 'package:ditonton/presentation/pages/popular_movies_page.dart';
@@ -30,9 +31,9 @@ class _HomeMoviePageState extends State<HomeMoviePage> {
   void initState() {
     super.initState();
 
-    movieListBloc1 = context.read<MovieListBloc>();
-    movieListBloc2 = context.read<MovieListBloc>();
-    movieListBloc3 = context.read<MovieListBloc>();
+    movieListBloc1 = locator();
+    movieListBloc2 = locator();
+    movieListBloc3 = locator();
 
     movieListBloc1.add(FetchNowPlayingMovies());
     movieListBloc2.add(FetchPopularMovies());
