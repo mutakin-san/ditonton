@@ -2,7 +2,6 @@ import 'package:ditonton/domain/entities/tv.dart';
 import 'package:ditonton/domain/entities/tv_detail.dart';
 import 'package:ditonton/domain/usecases/get_tv_detail.dart';
 import 'package:ditonton/domain/usecases/get_tv_watchlist_status.dart';
-import 'package:ditonton/domain/usecases/get_watchlist_status.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
