@@ -39,4 +39,30 @@ void main() {
     final result = tMovieModel.toEntity();
     expect(result, tMovie);
   });
+
+
+  test('should return a JSON map containing proper data', () {
+    final result = tMovieModel.toJson();
+    final expectedMap = {
+      "adult": false,
+      "backdrop_path": "backdropPath",
+      "genre_ids": [1, 2, 3],
+      "id": 1,
+      "original_title": "originalTitle",
+      "overview": "overview",
+      "popularity": 1.0,
+      "poster_path": "posterPath",
+      "release_date": "releaseDate",
+      "title": "title",
+      "video": false,
+      "vote_average": 1.0,
+      "vote_count": 1
+    };
+    expect(result, expectedMap);
+  });
+
+  test('should return a MovieModel from JSON', () {
+    final result = MovieModel.fromJson(tMovieModel.toJson());
+    expect(result, tMovieModel);
+  });
 }
