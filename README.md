@@ -13,7 +13,7 @@
 *  Watchlist Movies & TV Show
 *  Search Movies & TV Shows
 *  Detail Movies & TV Show
-*  Detail Season & Episode TV Show
+*  Detail Movies & TV Recommendations
 
 ## Banner Design
 <pre>
@@ -24,34 +24,6 @@
 This is a normal flutter app. You should follow the instructions in the [official documentation](https://flutter.io/docs/get-started/install).
 This project uses **BLoC** (business logic component) to separate the business logic with UI itself.
 It's recommended to do self-study about it before jumping into the project [here](https://bloclibrary.dev/).
-
-## Modularization Structure 🔥
-
-    # Root Project
-    .
-    |
-    ├── lib                        # Name of module (default from Flutter).
-    │
-    └── modules                    # Name of directory.
-        ├── core                   # Name of module.
-        │   ├── database           # Business logic component.
-        │   ├── styles             # Color, Text & Theme Styles.
-        │   ├── utils              # Util shared.
-        │   └── presentation       # UI, Widget, State Management.
-        │   
-        ├── feature_about          # Name of module.
-        │   └── presentation       # UI, Widget, State Management.
-        │
-        ├── feature_movie          # Name of module.
-        │   ├── data               # Local & Remote data, Model, Repository.
-        │   ├── domain             # Business logic component (Entities, Usecases).
-        │   └── presentation       # UI, Widget, State Management.
-        │
-        └── feature_tv             # Name of module.
-            ├── data               # Local & Remote data, Model, Repository.
-            ├── domain             # Business logic component (Entities, Usecases).
-            └── presentation       # UI, Widget, State Management.
-
 
 ## Built With 🛠
 * [BLoC Pattern](https://bloclibrary.dev/) - Business logic component to separate the business logic with UI.
@@ -66,7 +38,7 @@ It's recommended to do self-study about it before jumping into the project [here
 
 ## Author
 
-* **Raden Saleh**
+* **Mutakin**
 
 Don't forget to follow me, fork and give me a ⭐
 
