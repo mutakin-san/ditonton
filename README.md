@@ -1,55 +1,98 @@
-# a199-flutter-expert-project
+## Final Submission Flutter Expert
+![GitHub stars](https://img.shields.io/github/stars/mutakin-san/ditonton?style=social)
+![GitHub forks](https://img.shields.io/github/forks/mutakin-san/ditonton?style=social)
+![GitHub watchers](https://img.shields.io/github/watchers/mutakin-san/ditonton?style=social)
 
-Repository ini merupakan starter project submission kelas Flutter Expert Dicoding Indonesia.
+[![Codemagic build status](https://api.codemagic.io/apps/662656abaa00844ce1f084aa/662656abaa00844ce1f084a9/status_badge.svg)](https://codemagic.io/apps/662656abaa00844ce1f084aa/662656abaa00844ce1f084a9/latest_build)[![GitHub license](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/radensaleh/dicoding-flutter-expert/blob/main/LICENSE)
+[![platform](https://img.shields.io/badge/platform-Flutter-blue.svg)](https://flutter.dev/)
+[![Open Source Love](https://badges.frapsoft.com/os/v2/open-source.svg?v=103)](https://github.com/radensaleh/dicoding-flutter-expert)
 
----
+## Features
+*  Movies (Now Playing, Popular, Top Rated)
+*  TV Show (On The Air, Popular, Top Rated)
+*  Watchlist Movies & TV Show
+*  Search Movies & TV Shows
+*  Detail Movies & TV Show
+*  Detail Season & Episode TV Show
 
-## Tips Submission Awal
+## Banner Design
+<pre>
+<img src="assets/banner-ditonton.png">
+</pre>
 
-Pastikan untuk memeriksa kembali seluruh hasil testing pada submissionmu sebelum dikirimkan. Karena kriteria pada submission ini akan diperiksa setelah seluruh berkas testing berhasil dijalankan.
+## Quick start
+This is a normal flutter app. You should follow the instructions in the [official documentation](https://flutter.io/docs/get-started/install).
+This project uses **BLoC** (business logic component) to separate the business logic with UI itself.
+It's recommended to do self-study about it before jumping into the project [here](https://bloclibrary.dev/).
 
+## Modularization Structure 🔥
 
-## Tips Submission Akhir
-
-Jika kamu menerapkan modular pada project, Anda dapat memanfaatkan berkas `test.sh` pada repository ini. Berkas tersebut dapat mempermudah proses testing melalui *terminal* atau *command prompt*. Sebelumnya menjalankan berkas tersebut, ikuti beberapa langkah berikut:
-1. Install terlebih dahulu aplikasi sesuai dengan Operating System (OS) yang Anda gunakan.
-    - Bagi pengguna **Linux**, jalankan perintah berikut pada terminal.
-        ```
-        sudo apt-get update -qq -y
-        sudo apt-get install lcov -y
-        ```
-    
-    - Bagi pengguna **Mac**, jalankan perintah berikut pada terminal.
-        ```
-        brew install lcov
-        ```
-    - Bagi pengguna **Windows**, ikuti langkah berikut.
-        - Install [Chocolatey](https://chocolatey.org/install) pada komputermu.
-        - Setelah berhasil, install [lcov](https://community.chocolatey.org/packages/lcov) dengan menjalankan perintah berikut.
-            ```
-            choco install lcov
-            ```
-        - Kemudian cek **Environtment Variabel** pada kolom **System variabels** terdapat variabel GENTHTML dan LCOV_HOME. Jika tidak tersedia, Anda bisa menambahkan variabel baru dengan nilai seperti berikut.
-            | Variable | Value|
-            | ----------- | ----------- |
-            | GENTHTML | C:\ProgramData\chocolatey\lib\lcov\tools\bin\genhtml |
-            | LCOV_HOME | C:\ProgramData\chocolatey\lib\lcov\tools |
-        
-2. Untuk mempermudah proses verifikasi testing, jalankan perintah berikut.
-    ```
-    git init
-    ```
-3. Kemudian jalankan berkas `test.sh` dengan perintah berikut pada *terminal* atau *powershell*.
-    ```
-    test.sh
-    ```
-    atau
-    ```
-    ./test.sh
-    ```
-    Proses ini akan men-*generate* berkas `lcov.info` dan folder `coverage` terkait dengan laporan coverage.
-4. Tunggu proses testing selesai hingga muncul web terkait laporan coverage.
-
+    # Root Project
+    .
+    |
+    ├── lib                        # Name of module (default from Flutter).
+    │
+    └── modules                    # Name of directory.
+        ├── core                   # Name of module.
+        │   ├── database           # Business logic component.
+        │   ├── styles             # Color, Text & Theme Styles.
+        │   ├── utils              # Util shared.
+        │   └── presentation       # UI, Widget, State Management.
+        │   
+        ├── feature_about          # Name of module.
+        │   └── presentation       # UI, Widget, State Management.
+        │
+        ├── feature_movie          # Name of module.
+        │   ├── data               # Local & Remote data, Model, Repository.
+        │   ├── domain             # Business logic component (Entities, Usecases).
+        │   └── presentation       # UI, Widget, State Management.
+        │
+        └── feature_tv             # Name of module.
+            ├── data               # Local & Remote data, Model, Repository.
+            ├── domain             # Business logic component (Entities, Usecases).
+            └── presentation       # UI, Widget, State Management.
 
 
-[![Codemagic build status](https://api.codemagic.io/apps/662656abaa00844ce1f084aa/662656abaa00844ce1f084a9/status_badge.svg)](https://codemagic.io/apps/662656abaa00844ce1f084aa/662656abaa00844ce1f084a9/latest_build)
+## Built With 🛠
+* [BLoC Pattern](https://bloclibrary.dev/) - Business logic component to separate the business logic with UI.
+* [SQLite](https://pub.dev/packages/sqflite) - Local Database
+* [Equatable](https://pub.dev/packages/equatable) - Being able to compare objects in `Dart` often involves having to override the `==` operator.
+* [Json Serializable](https://pub.dev/packages/json_serializable) - Builders for handling JSON.
+* [Shared Preferences](https://pub.dev/packages/shared_preferences) - Cache implementation approach.
+* [Modularization](https://medium.com/flutter-community/mastering-flutter-modularization-in-several-ways-f5bced19101a) - Separate functionality into independent, interchangeable modules.
+* [Codemagic](https://blog.codemagic.io/environments-in-flutter-with-codemagic-cicd/) - Handling DevOps CI/CD for pipeline and automatically build.
+* Handle State - (Loading, No Data, Has Data, Error)
+* [Get It](https://pub.dev/packages/get_it) - A Dependency Injection
+
+## Author
+
+* **Raden Saleh**
+
+Don't forget to follow me, fork and give me a ⭐
+
+
+## License
+
+```
+MIT License
+
+Copyright (c) 2024 Mutakin
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+```
